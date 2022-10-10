@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
             gameState = GameState.Ended;
             PlayerManager.Instance.SetAnimation("PlayerDie");
             SpawnManager.Instance.StopSpawn();
+            SpeedManager.Instance.ResetSpeed();
         }
     }
     
@@ -54,6 +56,11 @@ public class GameManager : MonoBehaviour
             uiReady.SetActive(false);
             PlayerManager.Instance.SetAnimation("PlayerRun");
             SpawnManager.Instance.StartSpawn();
+            SpeedManager.Instance.StartSpeedIncrease();
+        }
+        else if (gameState == GameState.Ended && action)
+        {
+            HandleRestart();
         }
     }
     
@@ -69,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     void HandleRestart()
     {
-        
+        SceneManager.LoadScene("Main");
     }
 
     void HandleExit()
