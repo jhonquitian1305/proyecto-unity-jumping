@@ -21,7 +21,7 @@ public class PlayerManager : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.tag == "Enemy")
-        {
+        {    
             enemyCollision = true;
             GetComponent<BoxCollider2D>().enabled = false;
         }

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameState gameState = GameState.Ready;
     public RawImage background, platform;
     public float parallaxSpeed = 0.02f;
-    public GameObject uiReady;
+    public GameObject uiReady, uiScore;
     
     void Update()
     {
@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         {
             gameState = GameState.Playing;
             uiReady.SetActive(false);
+            uiScore.SetActive(true);
             PlayerManager.Instance.SetAnimation("PlayerRun");
             SpawnManager.Instance.StartSpawn();
             SpeedManager.Instance.StartSpeedIncrease();

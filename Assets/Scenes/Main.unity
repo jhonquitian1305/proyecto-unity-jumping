@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 1262276759}
   - component: {fileID: 1262276758}
   m_Layer: 5
-  m_Name: Info
+  m_Name: MaxPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -958,7 +958,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press SPACE/CLICK to Play
+  m_Text: 'BEST: 0'
 --- !u!222 &1262276759
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1190,6 +1190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 400264755}
+  MaxPointsText: {fileID: 1262276758}
   points: 0
 --- !u!4 &1973023228
 Transform:
